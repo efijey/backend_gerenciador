@@ -1,0 +1,10 @@
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/ApiApplication.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/controller/AgendamentoController.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/controller/ClienteController.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/entity/Agendamento.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/entity/Cliente.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/enums/StatusAgendamento.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/repository/AgendamentoRepository.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/repository/ClienteRepository.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/service/AgendamentoService.java
+/Users/fabiojuniorramos/Documents/java/backend_gerenciador/api/backend_gerenciador/src/main/java/br/com/gerenciadorsalao/api/service/ClienteService.java
