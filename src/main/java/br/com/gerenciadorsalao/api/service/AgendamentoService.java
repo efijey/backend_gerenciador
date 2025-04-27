@@ -35,6 +35,8 @@ public class AgendamentoService {
         return agendamentoRepository.save(agendamento);
     }
 
+    //aqui dentro tem um método que envia dados para um webhook, quando eu passo uma url de webhook especifica
+
     public Agendamento concluirAgendamento(Long agendamentoId){
         Optional<Agendamento> agendamentoOptional = agendamentoRepository.findById(agendamentoId);
 
@@ -93,6 +95,8 @@ public class AgendamentoService {
         agendamento.setDataFim(agendamentoAtualizado.getDataFim());
         agendamento.setServico(agendamentoAtualizado.getServico());
         agendamento.setValor(agendamentoAtualizado.getValor());
+        agendamento.setCliente(agendamentoAtualizado.getCliente());
+        agendamento.setStatus(agendamentoAtualizado.getStatus());
 
         return agendamentoRepository.save(agendamento);
     }
@@ -100,6 +104,7 @@ public class AgendamentoService {
     public List<Agendamento> listarAgendamentosPorStatus(StatusAgendamento status){
         return agendamentoRepository.findByStatus(status);
     }
+
 
     public List<Agendamento> listarAgendamentosPorCliente(Long clienteId){
         Optional<Cliente> clienteOptional = clienteRepository.findById(clienteId);
@@ -118,4 +123,15 @@ public class AgendamentoService {
     public List<Agendamento> listarAgendamentos(){
         return agendamentoRepository.findAll();
     }
+
+    public Agendamento buscarUltimoAgendamentoDoCliente(Long clienteId){
+        Optional<Cliente> clienteOptional = clienteRepository.findById(clienteId);
+
+        if (clienteOptional.isEmpty()){
+            throw new RuntimeException("Cliente não encontrado");
+        }
+
+        return agendamentoRepository.findFirstByClienteOrderByDataInicioDesc(clienteOptional.get()).orElse(null);
+    }
+
 }

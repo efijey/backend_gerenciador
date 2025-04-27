@@ -11,6 +11,8 @@ import br.com.gerenciadorsalao.api.service.AgendamentoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/agendamento")
 public class AgendamentoController {
 
@@ -43,8 +46,8 @@ public class AgendamentoController {
     }
 
     
-     @GetMapping("/listar-por-cliente")
-    public List<Agendamento> listarAgendamentosPorCliente(@RequestParam Long clienteId) {
+     @GetMapping("/listar-por-cliente/{clienteId}")
+    public List<Agendamento> listarAgendamentosPorCliente(@PathVariable Long clienteId) {
         return agendamentoService.listarAgendamentosPorCliente(clienteId);
     }
 
@@ -68,7 +71,7 @@ public class AgendamentoController {
         return agendamentoService.buscarAgendamentoPorId(agendamentoId);
     }
 
-     @GetMapping("/deletar/{agendamentoId}")
+     @DeleteMapping("/deletar/{agendamentoId}")
     public void deletarAgendamento(@PathVariable Long agendamentoId) {
         agendamentoService.deletarAgendamento(agendamentoId);
     }
@@ -78,5 +81,10 @@ public class AgendamentoController {
         return agendamentoService.listarAgendamentosPorDataInicio(java.time.LocalDateTime.parse(dataInicio));
     }
     
+
+    @GetMapping("/buscar-ultimo-agendamento-cliente/{clienteid}")
+    public Agendamento buscarUltimoAgendamentoDoCliente(@RequestParam Long clienteId) {
+        return agendamentoService.buscarUltimoAgendamentoDoCliente(clienteId);
+    }
 
 }

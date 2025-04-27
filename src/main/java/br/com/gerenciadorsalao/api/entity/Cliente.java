@@ -2,6 +2,7 @@ package br.com.gerenciadorsalao.api.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class Cliente {
 
     private String nome;
 
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
     private String telefone;
