@@ -1,0 +1,10 @@
+br/com/gerenciadorsalao/api/entity/Agendamento.class
+br/com/gerenciadorsalao/api/repository/AgendamentoRepository.class
+br/com/gerenciadorsalao/api/controller/AgendamentoController.class
+br/com/gerenciadorsalao/api/ApiApplication.class
+br/com/gerenciadorsalao/api/service/ClienteService.class
+br/com/gerenciadorsalao/api/service/AgendamentoService.class
+br/com/gerenciadorsalao/api/entity/Cliente.class
+br/com/gerenciadorsalao/api/controller/ClienteController.class
+br/com/gerenciadorsalao/api/repository/ClienteRepository.class
+br/com/gerenciadorsalao/api/enums/StatusAgendamento.class
